@@ -1,0 +1,46 @@
+{
+  "name": "html",
+  "description": "html",
+  "keywords": [],
+  "homepage": "http://test.test/",
+  "type": "project",
+  "license": "BSD-3-Clause",
+  "support": {
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.1"
+  },
+  "require-dev": {
+    "eaglewu/swoole-ide-helper": "dev-master"
+  },
+  "config": {
+    "process-timeout": 1800
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "yii\\composer\\Installer::postCreateProject"
+    ]
+  },
+  "extra": {
+    "yii\\composer\\Installer::postCreateProject": {
+      "setPermission": [
+        {
+          "runtime": "0777",
+          "public/assets": "0777",
+          "yii": "0755"
+        }
+      ]
+    },
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
